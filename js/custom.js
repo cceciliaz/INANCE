@@ -31,6 +31,15 @@ $(".owl-carousel").owlCarousel({
     }
 });
 
+
+/** main animation **/
+
+...
+
+
+
+
+
 /** google_map js **/
 
 function myMap() {
