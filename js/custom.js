@@ -32,13 +32,19 @@ $(".owl-carousel").owlCarousel({
 });
 
 
-/** OUR SERVICES our services animation
- * service_section
- * #box_services
- *  **/
-$("#box_servicesss").click(function(){
-    $("p").fadeToggle();
+/** our services animation **/
+
+$("#box_servicesss").click(function() {
+    $(this).hide(500, function() {
+        $(".modal").show();
+    });
 });
+
+/** close modal **/
+
+$(".bnt-close").click(function(){
+    $(".modal").hide();
+})
 
 
 /** google_map js **/
