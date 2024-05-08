@@ -1,10 +1,42 @@
-// Get Current Year
-function getCurrentYear() {
-    var d = new Date();
-    var year = d.getFullYear();
-    document.querySelector("#displayDateYear").innerText = year;
-}
-getCurrentYear()
+/** html scroll animation **/
+
+// let controller = new scrollMagic.controller();
+
+// new scrollMagic.Scene({
+//     duration: 200,
+//     offset: 5000
+// })
+// .setPin("#header_top")
+// .addTo(controller);
+
+
+// Inicialização do controlador
+let fixed = new ScrollMagic.Controller();
+// Criação da cena
+new ScrollMagic.Scene({
+    duration: 200, // Define a duração da cena em pixels
+    offset: 0 // Define o deslocamento inicial da cena em relação ao topo da página
+})
+.setPin("#header_top") // Fixa o elemento com o seletor "#header_top" durante a cena
+.addTo(controller); // Adiciona a cena ao controlador
+
+
+
+
+
+/** our services animation **/
+
+$("#box_servicesss").click(function() {
+    $(this).hide(500, function() {
+        $(".modal").show();
+    });
+});
+
+/** close modal **/
+
+$(".bnt-close").click(function(){
+    $(".modal").hide();
+})
 
 //client section owl carousel
 $(".owl-carousel").owlCarousel({
@@ -30,22 +62,6 @@ $(".owl-carousel").owlCarousel({
         }
     }
 });
-
-
-/** our services animation **/
-
-$("#box_servicesss").click(function() {
-    $(this).hide(500, function() {
-        $(".modal").show();
-    });
-});
-
-/** close modal **/
-
-$(".bnt-close").click(function(){
-    $(".modal").hide();
-})
-
 
 /** google_map js **/
 
