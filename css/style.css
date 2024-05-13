@@ -82,6 +82,24 @@ a:focus {
   background-color: #d1e3ff;
 }
 
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.animate {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.animate.visible {
+    opacity: 1;
+}
+
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;

@@ -1,28 +1,16 @@
-/** html scroll animation **/
+/** animated HTML **/
+$(document).ready(function() {
+    $(window).scroll(function() {
+        $('.animate').each(function() {
+            var topOfElement = $(this).offset().top;
+            var bottomOfWindow = $(window).scrollTop() + $(window).height();
 
-// let controller = new scrollMagic.controller();
-
-// new scrollMagic.Scene({
-//     duration: 200,
-//     offset: 5000
-// })
-// .setPin("#header_top")
-// .addTo(controller);
-
-
-// Inicialização do controlador
-let fixed = new ScrollMagic.Controller();
-// Criação da cena
-new ScrollMagic.Scene({
-    duration: 200, // Define a duração da cena em pixels
-    offset: 0 // Define o deslocamento inicial da cena em relação ao topo da página
-})
-.setPin("#header_top") // Fixa o elemento com o seletor "#header_top" durante a cena
-.addTo(controller); // Adiciona a cena ao controlador
-
-
-
-
+            if (bottomOfWindow > topOfElement) {
+                $(this).addClass('visible');
+            }
+        });
+    });
+});
 
 /** our services animation **/
 
