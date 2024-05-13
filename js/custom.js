@@ -1,10 +1,30 @@
-// Get Current Year
-function getCurrentYear() {
-    var d = new Date();
-    var year = d.getFullYear();
-    document.querySelector("#displayDateYear").innerText = year;
-}
-getCurrentYear()
+/** animated HTML **/
+$(document).ready(function() {
+    $(window).scroll(function() {
+        $('.animate').each(function() {
+            var topOfElement = $(this).offset().top;
+            var bottomOfWindow = $(window).scrollTop() + $(window).height();
+
+            if (bottomOfWindow > topOfElement) {
+                $(this).addClass('visible');
+            }
+        });
+    });
+});
+
+/** our services animation **/
+
+$("#box_servicesss").click(function() {
+    $(this).hide(500, function() {
+        $(".modal").show();
+    });
+});
+
+/** close modal **/
+
+$(".bnt-close").click(function(){
+    $(".modal").hide();
+})
 
 //client section owl carousel
 $(".owl-carousel").owlCarousel({
@@ -30,22 +50,6 @@ $(".owl-carousel").owlCarousel({
         }
     }
 });
-
-
-/** our services animation **/
-
-$("#box_servicesss").click(function() {
-    $(this).hide(500, function() {
-        $(".modal").show();
-    });
-});
-
-/** close modal **/
-
-$(".bnt-close").click(function(){
-    $(".modal").hide();
-})
-
 
 /** google_map js **/
 
